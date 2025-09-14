@@ -3,13 +3,10 @@ using Iris.Types;
 
 namespace Iris.Serialization;
 
-[JsonSourceGenerationOptions
-(
+[JsonSourceGenerationOptions(
     PropertyNamingPolicy = JsonKnownNamingPolicy.SnakeCaseLower,
-    DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingDefault
-)
-]
-[JsonSerializable(typeof(int[]))]
+    DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingDefault)]
+[JsonSerializable(typeof(long[]))]
 [JsonSerializable(typeof(Balance))]
 [JsonSerializable(typeof(UpdateLog[]))]
 [JsonSerializable(typeof(Trades))]
