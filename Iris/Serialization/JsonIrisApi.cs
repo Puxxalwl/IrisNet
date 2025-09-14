@@ -2,7 +2,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 namespace Iris.Serialization;
 
-public static class JsonIrisApi
+static internal class JsonIrisApi
 {
     public static JsonSerializerOptions Options { get; }
     static JsonIrisApi() => Configure(Options = new());
