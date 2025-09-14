@@ -77,7 +77,7 @@ public class IrisClient
         {
             if (IrisGold <= 0) throw new InvalidOperationException("Число ирис-голд не можеть быть меньше 1");
             if (Comment != "" && Comment.Length > 128) throw new ArgumentException("Длина комментария не может перевышать 128 символов");
-           
+
             string url = $"{_baseIrisUrl}/{ApiConstants.GiveGold}";
 
             var Params = new Dictionary<string, object>
@@ -210,4 +210,25 @@ public class IrisClient
         return Agents.Contains(UserId);
     }
 
+    public TradeClass Trade { get; } = new TradeClass();
+
+    public class TradeClass
+    {
+        private static readonly string TradeDealsUrl = "https://iris-tg.ru/trade/deals";
+        private static readonly string OrderBookUrl = "https://iris-tg.ru/k/trade/order_book";
+        private static readonly HttpClient _httpClient = new HttpClient();
+        public async Task<List<TradesDeals>> GetDealsAsync(long? Id)
+        {
+            var Params = Id != null ? new Dictionary<string, object>
+            {
+                ["id"] = Id
+            } : null;
+            return await _httpClient.GetWithRetry<List<TradesDeals>>(TradeDealsUrl, Params);
+        }
+
+        public async Task<Trades> GetOrderBookAsync()
+        {
+            return await _httpClient.GetWithRetry<Trades>(OrderBookUrl);
+        }
+    }
 }
