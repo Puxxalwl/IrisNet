@@ -6,7 +6,7 @@ public class UpdateLog
 {
     // Ид события
     [JsonPropertyName("id")]
-    public int Id { get; set; }
+    public long Id { get; set; }
 
     // Тип события: sweets_log — логи ирисок, gold_log — логи ирис-голд
     [JsonPropertyName("type")]
@@ -14,7 +14,7 @@ public class UpdateLog
 
     // Время события
     [JsonPropertyName("date")]
-    public int Date { get; set; }
+    public long Date { get; set; }
 
     // Объект собитыя
     [JsonPropertyName("object")]
