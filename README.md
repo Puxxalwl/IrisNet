@@ -1,16 +1,17 @@
 # IrisNet — асинхронный API клиент для взаимодействия с Iris-API
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-![.NET 9] (https://img.shields.io/badge/.NET-9-512BD4.svg?logo=dotnet&logoColor=white)
+![.NET 9](https://img.shields.io/badge/.NET-9-512BD4.svg?logo=dotnet&logoColor=white)
 ---
 
 ## Установка на Nuget
 ```bash
-dotnet add package Iris
+dotnet add package IrisApi
 ```
 ---
 
 ## Как получить токен?
+
 Для начала вам прийдется создать бота в: [BotFather](https://t.me/BotFather), далее в [Iris | Black Daimond](https://t.me/iris_cm) написать: `+ирис коннект` и следовать инструкции
 --- 
 
