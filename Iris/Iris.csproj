@@ -7,8 +7,8 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Nullable>enable</Nullable> 
 
-    <PackageId>Iris</PackageId>
-    <Version>1.0.0</Version>
+    <PackageId>IrisAPI</PackageId>
+    <Version>1.2.0</Version>
     <Authors>Puxxalwl</Authors>
     <Description>Асинхронный API клиент для взаимодействия с Iris-API</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
