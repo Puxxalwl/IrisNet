@@ -1,7 +1,8 @@
 namespace Iris.Constants;
 
-public static class ApiConstants
+internal class ApiConstants
 {
+    public const string _versionIris = "0.2";
     public const string GiveSweets = "pocket/sweets/give";
     public const string Balance = "pocket/balance";
     public const string SweetsHistory = "pocket/sweets/history";
