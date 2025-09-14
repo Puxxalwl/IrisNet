@@ -31,7 +31,7 @@ public partial class Transaction
 
     [JsonPropertyName("to_user_id")]
     [JsonIgnore(Condition = JsonIgnoreCondition.Always)]
-    public long ToUser { get; set; }
+    private long ToUser { get; set; }
 
     // Детали перевода
     [JsonPropertyName("detalis")]
@@ -57,10 +57,10 @@ public class TransactionDetalis
     [JsonPropertyName("amount")]
     public int Amount { get; set; }
 
-    // Кол-во переденных очков доната
+    // Кол-во переданных очков доната
     [JsonPropertyName("dotane_score")]
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-    public int DonateScore { get; set; }
+    public double DonateScore { get; set; }
 
     // комиссия перевода
     [JsonPropertyName("fee")]
