@@ -28,11 +28,6 @@ public partial class Transaction
     [JsonPropertyName("peer_id")]
     public long ToUserId { get; set; }
 
-
-    [JsonPropertyName("to_user_id")]
-    [JsonIgnore(Condition = JsonIgnoreCondition.Always)]
-    private long ToUser { get; set; }
-
     // Детали перевода
     [JsonPropertyName("detalis")]
     public TransactionDetalis Detalis { get; set; } = null!;
@@ -51,7 +46,7 @@ public class TransactionDetalis
 {
     // общая сумма перевода с учётом комиссии
     [JsonPropertyName("total")]
-    public int Total { get; set; }
+    public decimal Total { get; set; }
 
     // Сколько едениц получил пользователь
     [JsonPropertyName("amount")]
