@@ -173,12 +173,16 @@ public class IrisClient
             throw;
         }
     }
-    public async Task<UpdateLog[]> GetLogAsync()
+    public async Task<UpdateLog[]> GetLogAsync(int Limit = 0)
     {
         try
         {
+            var Params = new Dictionary<string, object>
+            {
+                ["limit"] = Limit
+            };
             string url = $"{_baseIrisUrl}/{ApiConstants.GetUpdates}";
-            return await _httpClient.GetWithRetry<UpdateLog[]>(url);
+            return await _httpClient.GetWithRetry<UpdateLog[]>(url, Params);
         }
         catch (Exception err)
         {
@@ -187,14 +191,15 @@ public class IrisClient
         }
     }
 
-    public async Task<Transaction[]> GetGoldHistoryAsync(long Offset = 0)
+    public async Task<Transaction[]> GetGoldHistoryAsync(long Offset = 0, int Limit = 0)
     {
         try
         {
             string url = $"{_baseIrisUrl}/{ApiConstants.GoldHistory}";
             var Params = new Dictionary<string, object>
             {
-                ["offset"] = Offset
+                ["offset"] = Offset,
+                ["limit"] = Limit
             };
             return await _httpClient.GetWithRetry<Transaction[]>(url, Params);
         }
@@ -205,20 +210,21 @@ public class IrisClient
         }
     }
 
-    public async Task<Transaction[]> GetSweetsHistoryAsync(long Offset = 0)
+    public async Task<Transaction[]> GetSweetsHistoryAsync(long Offset = 0, int Limit = 0)
     {
         try
         {
             string url = $"{_baseIrisUrl}/{ApiConstants.SweetsHistory}";
             var Params = new Dictionary<string, object>
             {
-                ["offset"] = Offset
+                ["offset"] = Offset,
+                ["limit"] = Limit
             };
             return await _httpClient.GetWithRetry<Transaction[]>(url, Params);
         }
         catch (Exception err)
         {
-            Logger.Error("Ошибка получения истории ирис-голд", err);
+            Logger.Error("Ошибка получения истории ирисок", err);
             throw;
         }
     }
