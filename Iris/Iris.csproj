@@ -8,7 +8,7 @@
     <Nullable>enable</Nullable> 
 
     <PackageId>IrisAPI</PackageId>
-    <Version>1.2.1</Version>
+    <Version>1.2.2</Version>
     <Authors>Puxxalwl</Authors>
     <Description>Асинхронный API клиент для взаимодействия с Iris-API</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
